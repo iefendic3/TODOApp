@@ -1,0 +1,44 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="45" style="border: 1px solid #c2185b" fxLayout="column">
+        <div  fxLayout="column"  style="background-color: #c2185b;" fxLayoutAlign="center center">
+            <div fxFlex="35">
+                Login Page
+            </div>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column">
+            <mat-form-field>
+                
+                <input matInput placeholder="Email" type="email" 
+                    name="email-name" formControlName="email"
+                    required>
+
+                <mat-error *ngIf="
+        form.get('email')?.hasError('required') 
+        ">
+                    Email is required</mat-error>
+
+                <!-- <mat-error *ngIf="form.get('email')?.hasError('email') ">Email is not valid</mat-error> -->
+
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Password" type="password" name="password-name" formControlName="password"
+                    required minlength="5">
+                <mat-error *ngIf="
+        form.get('password')?.hasError('required') 
+        ">
+                    Password is required</mat-error>
+                    <mat-error *ngIf="
+        form.get('password')?.hasError('minlength') 
+        ">
+                    Password must be at least 5 characters long</mat-error>
+            </mat-form-field>
+
+            <mat-error>
+                {{invalidCredentials}}
+            </mat-error>
+            
+            <button mat-raised-button type="submit">Login</button>
+        </form>
+    </mat-card>
+    
+</div>

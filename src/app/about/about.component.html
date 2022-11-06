@@ -1,0 +1,64 @@
+<h1 >Contact Us!</h1>
+<div fxLayout="row">
+<div fxLayoutAlign="left start" fxFlexFill>
+    <mat-card fxFlex="45" class="form-box" fxLayout="column">
+        <div  fxLayout="column"  style="background-color: #c2185b;" fxLayoutAlign="center center">
+            <div fxFlex="35">
+                Contact Form
+            </div>
+        </div>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column">
+            <mat-form-field>
+                
+                <input matInput placeholder="Name" type="text" 
+                    name="name-name" formControlName="name"
+                    required>
+
+                <mat-error *ngIf="
+        contactForm.get('name')?.hasError('required') 
+        ">
+                    Name is required</mat-error>
+
+                
+
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Email" type="email" name="email-name" formControlName="email"
+                    required >
+                <mat-error *ngIf="
+        contactForm.get('email')?.hasError('required') 
+        ">
+                    Email is required</mat-error>
+                    
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput placeholder="Message.." type="text" name="message-name" formControlName="message"
+                    required > </textarea>
+                <mat-error *ngIf="
+        contactForm.get('message')?.hasError('required') 
+        ">
+                    Message is required</mat-error>
+                    
+            </mat-form-field>
+
+            
+            <button mat-raised-button type="submit">Send</button>
+        </form>
+    </mat-card>
+
+<div class="form-box">
+    <div id="map" class="map" style="height: 250px; width: 250px"></div>
+    <h1>Contact Info:</h1>
+    <h3>Email: info@gmail.com</h3>
+    <h3>Mobile: +387 61 123 456</h3>
+    <h3>Address: Kolodvorska 12</h3>
+<!-- <app-googlemap></app-googlemap>     -->
+</div>
+
+</div>
+
+<div class="form-box">
+    
+</div>
+
+    </div>
