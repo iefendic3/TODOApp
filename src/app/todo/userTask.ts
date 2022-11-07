@@ -4,6 +4,6 @@ export interface UserTask{
     content: string;
     startDate: Date;
     endDate: Date;
-    duration: Date;
+    duration: number;
 
 }

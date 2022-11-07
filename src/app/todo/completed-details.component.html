@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Task: {{data.title}}</h2>
+<mat-dialog-content class="mat-typography">
+
+    <mat-card fxLayout="column">
+    <mat-form-field>
+        <input matInput name="title" placeholder="Task title" [(ngModel)]="data.title" required [disabled]="true" >
+      </mat-form-field>
+
+      <mat-form-field>
+          <input matInput name="content" placeholder="Task content" [(ngModel)]="data.content" required [disabled]="true" >
+        </mat-form-field>
+    </mat-card>
+  <h3>Task started: {{data.startDate | date:'short'}}</h3>
+  <h3 *ngIf="data.endDate != null">Task ended: {{data.endDate | date: 'short'}}</h3>
+  <h3 *ngIf="data.duration > 1">Duration: {{data.duration | number}} Days</h3>
+  <h3 *ngIf="data.duration < 1">Duration: {{data.duration*1440 | number}} Minutes</h3>
+
+  
+  
+</mat-dialog-content>
+<mat-dialog-actions >
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial >Ok</button>
+</mat-dialog-actions>

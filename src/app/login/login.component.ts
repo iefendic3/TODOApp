@@ -12,6 +12,9 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
+  kminchelle = "kminchelle";
+  lelplR = "0lelplR";
+
   invalidCredentials: string ='' ;
 
   form!: FormGroup;

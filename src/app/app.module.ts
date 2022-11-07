@@ -25,9 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {JwtModule} from '@auth0/angular-jwt'
 import {GoogleMapsModule} from '@angular/google-maps';
 import { GooglemapComponent } from './googlemap/googlemap.component';
-import { TaskModalComponent } from './task-modal/task-modal.component'
-
-
+import {DragDropModule} from '@angular/cdk/drag-drop'
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,7 @@ import { TaskModalComponent } from './task-modal/task-modal.component'
     TODOComponent,
     AppNavComponent,
     GooglemapComponent,
-    TaskModalComponent,
+    
   ],
   imports: [
     FormsModule,
@@ -58,6 +57,7 @@ import { TaskModalComponent } from './task-modal/task-modal.component'
     PanelModule,
     AboutModule,
     HttpClientModule,
+    DragDropModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => localStorage.getItem('token'),
