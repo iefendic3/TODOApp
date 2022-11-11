@@ -10,9 +10,9 @@
           <input matInput name="content" placeholder="Task content" [(ngModel)]="data.content" required [disabled]="true" >
         </mat-form-field>
     </mat-card>
-  <h3>Task started: {{data.startDate | date:'short'}}</h3>
-  <h3 *ngIf="data.endDate != null">Task ended: {{data.endDate | date: 'short'}}</h3>
-  <h3 *ngIf="data.duration > 1">Duration: {{data.duration | number}} Days</h3>
+  <h3>Task started: {{data.startDate}}</h3>
+  <h3 *ngIf="data.endDate != null">Task ended: {{data.endDate}}</h3>
+  <h3 *ngIf="data.duration >= 1">Duration: {{data.duration | number}} Days</h3>
   <h3 *ngIf="data.duration < 1">Duration: {{data.duration*1440 | number}} Minutes</h3>
 
   

@@ -10,7 +10,7 @@
           <input matInput name="content" placeholder="Task content" [(ngModel)]="data.content" required [disabled]="!enable" #dataContent>
         </mat-form-field>
     </mat-card>
-  <h3>Task started: {{data.startDate | date: 'short'}}</h3>
+  <h3>Task started: {{data.startDate}}</h3>
   
 
   <mat-checkbox class="example-margin" [(ngModel)]="enable">Enable editing</mat-checkbox>
@@ -18,5 +18,5 @@
 </mat-dialog-content>
 <mat-dialog-actions >
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="updateTask(dataTitle.value, dataContent.value)">Ok</button>
+  <button mat-button [mat-dialog-close]="[data.title, data.content]" cdkFocusInitial>Ok</button>
 </mat-dialog-actions>

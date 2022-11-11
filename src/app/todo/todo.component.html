@@ -1,3 +1,4 @@
+<div class="todo-background">
 <h1>List of tasks</h1>
 
 
@@ -44,6 +45,7 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)">
       <mat-card class="example-box" *ngFor="let item of tasks; let i = index" cdkDrag (click)="openDetails(i)">
+        
         {{item.title}}
         <div *ngIf="tasks.length != 0">
             
@@ -72,6 +74,7 @@
     </mat-card>
     </div>
   </div>
+</div>
 </div>
 <!-- 
 <div fxLayout="row" fxLayoutAlign="center">
